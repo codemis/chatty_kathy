@@ -18,6 +18,7 @@
 		66CB5F19171244460089701A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB5F18171244460089701A /* Default@2x.png */; };
 		66CB5F1B171244460089701A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB5F1A171244460089701A /* Default-568h@2x.png */; };
 		66CB5F1E171244460089701A /* ChattyKathy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F1C171244460089701A /* ChattyKathy.xcdatamodeld */; };
+		66CB5F25171244CA0089701A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CB5F24171244CA0089701A /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		66CB5F18171244460089701A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		66CB5F1A171244460089701A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		66CB5F1D171244460089701A /* ChattyKathy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChattyKathy.xcdatamodel; sourceTree = "<group>"; };
+		66CB5F24171244CA0089701A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				66CB5F14171244460089701A /* CHKYAppDelegate.m */,
 				66CB5F1C171244460089701A /* ChattyKathy.xcdatamodeld */,
 				66CB5F0B171244460089701A /* Supporting Files */,
+				66CB5F24171244CA0089701A /* Storyboard.storyboard */,
 			);
 			path = ChattyKathy;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				66CB5F17171244460089701A /* Default.png in Resources */,
 				66CB5F19171244460089701A /* Default@2x.png in Resources */,
 				66CB5F1B171244460089701A /* Default-568h@2x.png in Resources */,
+				66CB5F25171244CA0089701A /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
