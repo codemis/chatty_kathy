@@ -19,6 +19,8 @@
 		66CB5F1B171244460089701A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB5F1A171244460089701A /* Default-568h@2x.png */; };
 		66CB5F1E171244460089701A /* ChattyKathy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F1C171244460089701A /* ChattyKathy.xcdatamodeld */; };
 		66CB5F25171244CA0089701A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CB5F24171244CA0089701A /* Storyboard.storyboard */; };
+		66CB5F2C171245BD0089701A /* CHKYChatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F2B171245BD0089701A /* CHKYChatterViewController.m */; };
+		66CB5F30171246BC0089701A /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F2F171246BC0089701A /* Message.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		66CB5F1A171244460089701A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		66CB5F1D171244460089701A /* ChattyKathy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChattyKathy.xcdatamodel; sourceTree = "<group>"; };
 		66CB5F24171244CA0089701A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		66CB5F2A171245BD0089701A /* CHKYChatterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHKYChatterViewController.h; sourceTree = "<group>"; };
+		66CB5F2B171245BD0089701A /* CHKYChatterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHKYChatterViewController.m; sourceTree = "<group>"; };
+		66CB5F2E171246BC0089701A /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		66CB5F2F171246BC0089701A /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,8 @@
 		66CB5F0A171244450089701A /* ChattyKathy */ = {
 			isa = PBXGroup;
 			children = (
+				66CB5F2D171246960089701A /* Models */,
+				66CB5F261712451B0089701A /* Controllers */,
 				66CB5F13171244460089701A /* CHKYAppDelegate.h */,
 				66CB5F14171244460089701A /* CHKYAppDelegate.m */,
 				66CB5F1C171244460089701A /* ChattyKathy.xcdatamodeld */,
@@ -107,6 +115,24 @@
 				66CB5F1A171244460089701A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66CB5F261712451B0089701A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66CB5F2A171245BD0089701A /* CHKYChatterViewController.h */,
+				66CB5F2B171245BD0089701A /* CHKYChatterViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		66CB5F2D171246960089701A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66CB5F2E171246BC0089701A /* Message.h */,
+				66CB5F2F171246BC0089701A /* Message.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +205,8 @@
 				66CB5F11171244460089701A /* main.m in Sources */,
 				66CB5F15171244460089701A /* CHKYAppDelegate.m in Sources */,
 				66CB5F1E171244460089701A /* ChattyKathy.xcdatamodeld in Sources */,
+				66CB5F2C171245BD0089701A /* CHKYChatterViewController.m in Sources */,
+				66CB5F30171246BC0089701A /* Message.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
