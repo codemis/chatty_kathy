@@ -1,12 +1,7 @@
 //
 //  CHKYAppDelegate.m
-//  ChattyKathy
-//
-//  Created by Johnathan Pulos on 4/7/13.
-//  Copyright (c) 2013 Johnathan Pulos. All rights reserved.
-//
-
 #import "CHKYAppDelegate.h"
+#import "Message.h"
 
 @implementation CHKYAppDelegate
 
@@ -16,10 +11,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+//    NSManagedObjectContext *context = self.managedObjectContext;
+//    Message *message = [NSEntityDescription insertNewObjectForEntityForName:@"Message"
+//                                                     inManagedObjectContext:context];
+//    message.name = @"Joey Smith";
+//    message.text = @"I love your law blog!";
+//    NSError *error = nil;
+//    if ([context save:&error]) {
+//        NSLog(@"I was saved!");
+//    }else {
+//        NSLog(@"The save wasn’t successful: %@", [error userInfo]);
+//    }
     return YES;
 }
 

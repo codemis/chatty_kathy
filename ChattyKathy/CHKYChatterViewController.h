@@ -1,0 +1,2 @@
+@interface CHKYChatterViewController : UITableViewController
+@end
