@@ -1,0 +1,2 @@
+@interface CHKYMessageViewController : UIViewController
+@end

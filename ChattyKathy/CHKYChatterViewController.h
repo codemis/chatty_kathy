@@ -1,3 +1,4 @@
 @interface CHKYChatterViewController : UITableViewController
--(IBAction)returnHome:(UIStoryboardSegue*) segue;
+@property(strong, nonatomic) NSMutableDictionary *addedMessage;
+-(IBAction)addNewMessage:(UIStoryboardSegue*) segue;
 @end

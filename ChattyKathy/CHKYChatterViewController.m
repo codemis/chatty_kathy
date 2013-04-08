@@ -9,8 +9,20 @@
 
 @implementation CHKYChatterViewController
 
-- (IBAction)returnHome:(UIStoryboardSegue *)segue
+- (IBAction)addNewMessage:(UIStoryboardSegue *)segue
 {
+    NSManagedObjectContext *context = self.appDelegate.managedObjectContext;
+    Message *message = [NSEntityDescription insertNewObjectForEntityForName:@"Message"
+                                                     inManagedObjectContext:context];
+    message.name = self.addedMessage[@"name"];
+    message.text = self.addedMessage[@"text"];
+    NSError *error = nil;
+    if ([context save:&error]) {
+        NSLog(@"I was saved!");
+        [self loadTableData];
+    }else {
+        NSLog(@"The save wasn’t successful: %@", [error userInfo]);
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated

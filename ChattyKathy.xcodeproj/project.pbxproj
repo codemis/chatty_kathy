@@ -21,6 +21,7 @@
 		66CB5F25171244CA0089701A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CB5F24171244CA0089701A /* Storyboard.storyboard */; };
 		66CB5F2C171245BD0089701A /* CHKYChatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F2B171245BD0089701A /* CHKYChatterViewController.m */; };
 		66CB5F30171246BC0089701A /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F2F171246BC0089701A /* Message.m */; };
+		66CB5F36171284B50089701A /* CHKYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB5F35171284B50089701A /* CHKYMessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		66CB5F2B171245BD0089701A /* CHKYChatterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHKYChatterViewController.m; sourceTree = "<group>"; };
 		66CB5F2E171246BC0089701A /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		66CB5F2F171246BC0089701A /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		66CB5F34171284B50089701A /* CHKYMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHKYMessageViewController.h; sourceTree = "<group>"; };
+		66CB5F35171284B50089701A /* CHKYMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHKYMessageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 			children = (
 				66CB5F2A171245BD0089701A /* CHKYChatterViewController.h */,
 				66CB5F2B171245BD0089701A /* CHKYChatterViewController.m */,
+				66CB5F34171284B50089701A /* CHKYMessageViewController.h */,
+				66CB5F35171284B50089701A /* CHKYMessageViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				66CB5F1E171244460089701A /* ChattyKathy.xcdatamodeld in Sources */,
 				66CB5F2C171245BD0089701A /* CHKYChatterViewController.m in Sources */,
 				66CB5F30171246BC0089701A /* Message.m in Sources */,
+				66CB5F36171284B50089701A /* CHKYMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
