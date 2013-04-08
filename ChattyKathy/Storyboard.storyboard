@@ -40,11 +40,61 @@
                             <outlet property="delegate" destination="1tH-YI-A83" id="S4E-iN-fUj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="w3G-HG-jhr"/>
+                    <navigationItem key="navigationItem" id="w3G-HG-jhr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="05B-Kv-bJb">
+                            <connections>
+                                <segue destination="Mfu-Im-jfR" kind="push" id="ZiW-0L-RKw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbG-Fx-m07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="-259"/>
+            <point key="canvasLocation" x="346" y="-221"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="d0Q-KY-raK">
+            <objects>
+                <viewController id="Mfu-Im-jfR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cow-ig-pa6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-gE-Rlg">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your Message" translatesAutoresizingMaskIntoConstraints="NO" id="1As-IQ-Bve">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="D9T-jn-cWr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1As-IQ-Bve" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="4e3-rf-QbX"/>
+                            <constraint firstAttribute="trailing" secondItem="pbf-gE-Rlg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LIq-ux-346"/>
+                            <constraint firstItem="pbf-gE-Rlg" firstAttribute="leading" secondItem="Cow-ig-pa6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SXA-ma-Ern"/>
+                            <constraint firstAttribute="trailing" secondItem="1As-IQ-Bve" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gV7-UK-rGw"/>
+                            <constraint firstItem="pbf-gE-Rlg" firstAttribute="top" secondItem="Cow-ig-pa6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="mDv-Ub-2lb"/>
+                            <constraint firstItem="1As-IQ-Bve" firstAttribute="leading" secondItem="Cow-ig-pa6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qdc-KR-Iym"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mgy-x3-RvI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AxF-Ga-zVG">
+                            <connections>
+                                <segue destination="FpF-Z8-GVN" kind="unwind" unwindAction="returnHome:" id="Jy1-6p-v4A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQH-QZ-pfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FpF-Z8-GVN" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="-215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rof-oi-MvP">
@@ -62,12 +112,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jf6-FM-vlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="-259"/>
+            <point key="canvasLocation" x="-146" y="-221"/>
         </scene>
     </scenes>
     <classes>
         <class className="CHKYChatterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CHKYChatterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="returnHome:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -8,6 +8,11 @@
 @end
 
 @implementation CHKYChatterViewController
+
+- (IBAction)returnHome:(UIStoryboardSegue *)segue
+{
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
