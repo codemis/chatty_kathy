@@ -54,6 +54,32 @@
     return cell;
 }
 
+-  (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+        Message *currentMessage = self.messageArray[indexPath.row];
+        [context deleteObject:[context objectWithID:currentMessage.objectID]];
+        NSError *error = nil;
+        if ([context save:&error]) {
+            NSMutableArray *messageArrayCopy = self.messageArray.mutableCopy;
+            [messageArrayCopy removeObjectAtIndex:indexPath.row];
+            self.messageArray = messageArrayCopy;
+            NSLog(@"I delete your base!");
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        } else{
+            NSLog(@"Delete failed: %@", error.userInfo);
+        }
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
 #pragma mark - Private methods
 - (CHKYAppDelegate *)appDelegate {
     return (CHKYAppDelegate *)[[UIApplication sharedApplication] delegate];

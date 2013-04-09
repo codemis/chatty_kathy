@@ -8,7 +8,7 @@
 @implementation CHKYMessageViewController
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSMutableDictionary *newMessage = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *newMessage = NSMutableDictionary.new;
     newMessage[@"name"] = self.nameTextField.text;
     newMessage[@"text"] = self.messageTextField.text;
     CHKYChatterViewController *chatterVC = segue.destinationViewController;
