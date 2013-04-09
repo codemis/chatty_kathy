@@ -11,18 +11,27 @@
 
 - (IBAction)addNewMessage:(UIStoryboardSegue *)segue
 {
-    NSManagedObjectContext *context = self.appDelegate.managedObjectContext;
+    NSManagedObjectContext *context = self.appDelegate.coreDataStore.contextForCurrentThread;
     Message *message = [NSEntityDescription insertNewObjectForEntityForName:@"Message"
                                                      inManagedObjectContext:context];
     message.name = self.addedMessage[@"name"];
     message.text = self.addedMessage[@"text"];
-    NSError *error = nil;
-    if ([context save:&error]) {
+    message.messageId = message.assignObjectId;
+    [context saveOnSuccess:^
+    {
         NSLog(@"I was saved!");
-        [self loadTableData];
-    }else {
-        NSLog(@"The save wasn’t successful: %@", [error userInfo]);
+        NSMutableArray *messageArrayCopy = self.messageArray.mutableCopy;
+        [messageArrayCopy addObject:message];
+        self.messageArray = messageArrayCopy;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageArray.count - 1 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationFade];
     }
+                 onFailure:^(NSError *error)
+     {
+         NSLog(@"The save wasn’t successful: %@", error);
+     }
+    ];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -59,19 +68,22 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+        NSManagedObjectContext *context = self.appDelegate.coreDataStore.contextForCurrentThread;
         Message *currentMessage = self.messageArray[indexPath.row];
         [context deleteObject:[context objectWithID:currentMessage.objectID]];
-        NSError *error = nil;
-        if ([context save:&error]) {
+        [context saveOnSuccess:^
+        {
             NSMutableArray *messageArrayCopy = self.messageArray.mutableCopy;
             [messageArrayCopy removeObjectAtIndex:indexPath.row];
             self.messageArray = messageArrayCopy;
             NSLog(@"I delete your base!");
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        } else{
-            NSLog(@"Delete failed: %@", error.userInfo);
         }
+                     onFailure:^(NSError *error)
+        {
+            NSLog(@"Delete failed: %@", error);
+        }
+         ];
     }
 }
 
@@ -87,13 +99,19 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 // This method executes a fetch request and reloads the table view.
 - (void) loadTableData {
-    NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+    NSManagedObjectContext *context = self.appDelegate.coreDataStore.contextForCurrentThread;
     // Construct a fetch request
     NSFetchRequest *fetchRequest = NSFetchRequest.new;
     fetchRequest.entity = [NSEntityDescription entityForName:@"Message"
                                       inManagedObjectContext:context];
-    NSError *error = nil;
-    self.messageArray = [context executeFetchRequest:fetchRequest error:&error];
-    [self.tableView reloadData];
+    [context executeFetchRequest:fetchRequest onSuccess:^(NSArray *results)
+    {
+        self.messageArray = results;
+        [self.tableView reloadData];
+    }
+                       onFailure:^(NSError *error)
+     {
+         NSLog(@"Unable to get results error: %@", error);
+     }];
 }
 @end
