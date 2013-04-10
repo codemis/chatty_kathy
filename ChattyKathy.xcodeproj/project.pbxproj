@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66983A7B1715DAE400CDE380 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 66983A7A1715DAE400CDE380 /* README.md */; };
 		66AC89531714BD2800FF8808 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 66AC89201714BD2800FF8808 /* CHANGELOG.md */; };
 		66AC89541714BD2800FF8808 /* libstackmob-v1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC89521714BD2800FF8808 /* libstackmob-v1.4.0.a */; };
 		66AC89561714BDB200FF8808 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC89551714BDB200FF8808 /* Security.framework */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66983A7A1715DAE400CDE380 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		66AC89201714BD2800FF8808 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		66AC89221714BD2800FF8808 /* AFHTTPClient+StackMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPClient+StackMob.h"; sourceTree = "<group>"; };
 		66AC89231714BD2800FF8808 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		66CB5EF6171244450089701A = {
 			isa = PBXGroup;
 			children = (
+				66983A7A1715DAE400CDE380 /* README.md */,
 				66AC891F1714BD2800FF8808 /* StackMob-v1.4.0 */,
 				66CB5F0A171244450089701A /* ChattyKathy */,
 				66CB5F01171244450089701A /* Frameworks */,
@@ -333,6 +336,7 @@
 				66CB5F1B171244460089701A /* Default-568h@2x.png in Resources */,
 				66CB5F25171244CA0089701A /* Storyboard.storyboard in Resources */,
 				66AC89531714BD2800FF8808 /* CHANGELOG.md in Resources */,
+				66983A7B1715DAE400CDE380 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

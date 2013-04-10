@@ -1,6 +1,7 @@
 #import "CHKYChatterViewController.h"
 #import "CHKYAppDelegate.h"
 #import "Message.h"
+#import "NSManagedObjectContext+Concurrency.h"
 
 @interface CHKYChatterViewController ()
 // An array to house all of our fetched Label objects
@@ -39,7 +40,10 @@
     [super viewWillAppear:animated];
     /* Here we call the method to load the table data */
     [self loadTableData];
+//    NSManagedObjectContext *context = self.appDelegate.coreDataStore.contextForCurrentThread;
+//    [context observeContext:context];
 }
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
