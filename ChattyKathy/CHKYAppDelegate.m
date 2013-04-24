@@ -1,8 +1,8 @@
 #import "CHKYAppDelegate.h"
 #import "Message.h"
 #import "StackMobPush.h"
-#define SM_PUBLIC_KEY @"f2aaea3c-02e7-4fc2-9785-a729412f8ef1"
-#define SM_PRIVATE_KEY @"913e9b53-67fc-4461-9629-fc4d33542397"
+#define SM_PUBLIC_KEY @"167d99e5-2c95-49e8-8d50-4a34c24ac761"
+#define SM_PRIVATE_KEY @"7b2f21b3-8fe2-43f9-a279-1f9cd8fbbd21"
 
 @implementation CHKYAppDelegate
 @synthesize managedObjectModel = _managedObjectModel;
