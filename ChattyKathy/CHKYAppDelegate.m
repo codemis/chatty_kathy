@@ -1,17 +1,61 @@
 #import "CHKYAppDelegate.h"
 #import "Message.h"
+#import "StackMobPush.h"
+#define SM_PUBLIC_KEY @"f2aaea3c-02e7-4fc2-9785-a729412f8ef1"
+#define SM_PRIVATE_KEY @"913e9b53-67fc-4461-9629-fc4d33542397"
 
 @implementation CHKYAppDelegate
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize coreDataStore = _coreDataStore;
 @synthesize client = _client;
+@synthesize pushClient = _pushClient;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.client = [[SMClient alloc] initWithAPIVersion:@"0"
-                                             publicKey:@"f2aaea3c-02e7-4fc2-9785-a729412f8ef1"];
+                                             publicKey:SM_PUBLIC_KEY];
+    self.pushClient = [[SMPushClient alloc] initWithAPIVersion:@"0" publicKey:SM_PUBLIC_KEY privateKey:SM_PRIVATE_KEY];
     self.coreDataStore = [self.client coreDataStoreWithManagedObjectModel:self.managedObjectModel];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
     return YES;
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [[token componentsSeparatedByString:@" "] componentsJoinedByString:@""];
+    
+    NSLog(@"push token: %@",token);
+    
+    // Persist token here if you need.  User is an arbitrary string to associate with the token.
+    [self.pushClient registerDeviceToken:token withUser:@"Person123" onSuccess:^{
+        NSLog(@"successful registration");
+    } onFailure:^(NSError *error) {
+        NSLog(@"error: %@", [error userInfo]);
+    }];
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"Error in registration. Error: %@", err);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        NSString *cancelTitle = @"Close";
+        NSString *showTitle = @"Show";
+        NSString *message = [[userInfo valueForKey:@"aps"] valueForKey:@"alert"];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"StackMob Message"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:cancelTitle
+                                                  otherButtonTitles:showTitle, nil];
+        [alertView show];
+        
+    } else {
+        //Do stuff that you would do if the application was not active
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
