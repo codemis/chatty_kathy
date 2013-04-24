@@ -448,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Johnathan Pulos";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Johnathan Pulos (QRE6RL4B4N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johnathan Pulos";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChattyKathy/ChattyKathy-Prefix.pch";
 				INFOPLIST_FILE = "ChattyKathy/ChattyKathy-Info.plist";
@@ -459,7 +459,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "67677ABD-AB1B-4DB3-B807-CA11611F3ACB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8DC52AA6-804D-4277-90CF-EA96985DADE3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "67677ABD-AB1B-4DB3-B807-CA11611F3ACB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -468,7 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Johnathan Pulos";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Johnathan Pulos (QRE6RL4B4N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Johnathan Pulos";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChattyKathy/ChattyKathy-Prefix.pch";
 				INFOPLIST_FILE = "ChattyKathy/ChattyKathy-Info.plist";
@@ -479,7 +479,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "67677ABD-AB1B-4DB3-B807-CA11611F3ACB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8DC52AA6-804D-4277-90CF-EA96985DADE3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "67677ABD-AB1B-4DB3-B807-CA11611F3ACB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
